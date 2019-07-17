@@ -1,10 +1,10 @@
 # SortAlgorithm
 The common algorithms of list or array sorting
 
-## bubbleSort
+## BubbleSort
 ### 冒泡排序
 
-## selectionSort
+## SelectionSort
 ### 选择排序
 
 ## InsertSort
