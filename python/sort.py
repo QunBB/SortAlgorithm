@@ -64,16 +64,23 @@ def shellSotr(arr):
     :return:
     """
 
-    n = len(arr) // 2
+    n = len(arr) // 2  # n：分组数，其实也是每组的步长
     while n > 0:
         for i in range(n):
-            for j in range(i + n, len(arr), n):
-                for k in range(j, i, -n):
-                    temp = arr[k]
-                    index = k
-                    if temp < arr[k - n]:
-                        arr[k] = arr[k - n]
-                        index -= n
-                    arr[index] = temp
+            for j in range(i + n, len(arr), n):  # 对每组数据进行遍历
+                # 进行插入排序
+                val = arr[j]
+                index = j - n
+                while (index >= i) & (val < arr[index]):
+                    arr[index + n] = arr[index]
+                    index -= n
+                arr[index + n] = val
 
         n = n // 2
+
+
+if __name__ == '__main__':
+    l = [8, 9, 1, 7, 2, 3, 5, 4, 6, 0]
+    print(l)
+    shellSotr(l)
+    print(l)
